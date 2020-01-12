@@ -54,5 +54,15 @@ class GildedRoseTest {
         assertEquals(11, foo.quality);
     }
 
+    @Test
+    void AgedBrieQualityNeverOver50() {
+        Item foo = new Item("Aged Brie", 18, 50);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(17, foo.sellIn);
+        assertEquals(50, foo.quality);
+    }
+
 
 }
