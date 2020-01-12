@@ -73,4 +73,15 @@ class GildedRoseTest {
         assertEquals(18, foo.sellIn);
         assertEquals(30, foo.quality);
     }
+
+    @Test
+    void BackStagePassesQualityIncrease() {
+        Item foo = new Item("Backstage passes to a TAFKAL80ETC concert", 20, 10);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(19, foo.sellIn);
+        assertEquals(11, foo.quality);
+    }
+
 }
