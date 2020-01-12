@@ -31,5 +31,19 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(-1, foo.sellIn);
+        assertEquals(0, 0);
     }
+
+    @Test
+    void qualityDropsFasterAfterSellInDate() {
+        Item foo = new Item("foo", 0, 30);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-1, foo.sellIn);
+        assertEquals(28, foo.quality);
+    }
+
+
+
 }
