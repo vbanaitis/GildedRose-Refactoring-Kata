@@ -24,4 +24,12 @@ class GildedRoseTest {
         assertEquals(0, foo.quality);
     }
 
+    @Test
+    void sellInPassed() {
+        Item foo = new Item("foo", 0, 0);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-1, foo.sellIn);
+    }
 }
