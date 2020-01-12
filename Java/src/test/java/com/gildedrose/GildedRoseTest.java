@@ -110,4 +110,13 @@ class GildedRoseTest {
         assertEquals(0, foo.quality);
     }
 
+    @Test
+    void ConjuredQualityDegrageTwiseAsFast() {
+        Item foo = new Item("Conjured", 20, 10);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(19, foo.sellIn);
+        assertEquals(8, foo.quality);
+    }
 }
