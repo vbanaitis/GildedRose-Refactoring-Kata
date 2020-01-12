@@ -14,4 +14,14 @@ class GildedRoseTest {
         assertEquals("foo", app.items[0].name);
     }
 
+
+    @Test
+    void oldItem_QualityNotNegative() {
+        Item foo = new Item("foo", 0, 0);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, foo.quality);
+    }
+
 }
