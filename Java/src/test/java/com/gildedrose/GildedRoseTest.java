@@ -14,7 +14,6 @@ class GildedRoseTest {
         assertEquals("foo", app.items[0].name);
     }
 
-
     @Test
     void oldItem_QualityNotNegative() {
         Item foo = new Item("foo", 0, 0);
@@ -52,6 +51,16 @@ class GildedRoseTest {
         app.updateQuality();
         assertEquals(17, foo.sellIn);
         assertEquals(11, foo.quality);
+    }
+
+    @Test
+    void AgedBrieQualityIncreaseAfterSellIn() {
+        Item foo = new Item("Aged Brie", 0, 10);
+        Item[] items = new Item[] {foo};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(-1, foo.sellIn);
+        assertEquals(12, foo.quality);
     }
 
     @Test
