@@ -15,7 +15,7 @@ class GildedRose {
                     if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                         items[i].quality = items[i].quality - 1;
                     }
-                    if (items[i].name.equals("Conjured")) {
+                    if (items[i].name.equals("Conjured Mana Cake")) {
                         items[i].quality = items[i].quality - 1;
                     }
                 }

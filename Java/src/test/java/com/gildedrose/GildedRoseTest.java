@@ -112,7 +112,7 @@ class GildedRoseTest {
 
     @Test
     void ConjuredQualityDegrageTwiseAsFast() {
-        Item foo = new Item("Conjured", 20, 10);
+        Item foo = new Item("Conjured Mana Cake", 20, 10);
         Item[] items = new Item[] {foo};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
